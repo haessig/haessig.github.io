@@ -1,0 +1,73 @@
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+nav a {
+
+    color: #333;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    position: relative;
+
+    padding: 0.5rem 0;
+
+}
+
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #f8af27;
+
+    transition: width 0.3s ease;
+
+}
+
+
+nav a:hover::after {
+
+    width: 100%;
+
+}
+
+.back-link {
+
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    color: #666;
+
+    font-size: 0.9rem;
+
+}
+
+
+.back-link:hover {
+
+    color: #cb753b;
+
+}
