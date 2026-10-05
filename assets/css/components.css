@@ -3,71 +3,102 @@ button {
     cursor: pointer;
 }
 
-
 nav {
     display: flex;
     gap: 2rem;
     justify-content: center;
 }
 
-
 nav a {
-
     color: #333;
-
     text-decoration: none;
-
     font-weight: 600;
-
     position: relative;
-
     padding: 0.5rem 0;
-
 }
-
 
 nav a::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
-
     bottom: 0;
-
     width: 0%;
-
     height: 2px;
-
     background: #f8af27;
-
     transition: width 0.3s ease;
-
 }
-
 
 nav a:hover::after {
-
     width: 100%;
-
-}
-
-.back-link {
-
-    display: inline-block;
-
-    margin-top: 1rem;
-
-    color: #666;
-
-    font-size: 0.9rem;
-
 }
 
 
-.back-link:hover {
+/* ============================= */
+/* CV TIMELINE COMPONENT (neu) */
+/* ============================= */
 
-    color: #cb753b;
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+}
 
+.timeline-thread {
+    display: none !important;  /* Thread unsichtbar */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(to bottom, #f8af27, #cb753b);
+    height: 0;
+    z-index: 1;
+    transition: height 0.1s ease-out;
+}
+
+.cv-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media (min-width: 768px) {
+    .cv-section:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+.cv-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-icon {
+    min-width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6d4aff, #f8af27);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.section-content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* In components.css hinzufügen, falls nötig */
+.section-content {
+    background: rgba(255, 255, 255, 0.95); /* Leicht opak */
+    backdrop-filter: blur(8px);           /* Konsistent mit glass.css */
 }

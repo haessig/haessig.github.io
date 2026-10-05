@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="data:,">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
@@ -12,15 +13,7 @@
 
 <body>
 
-    <header>
-        <h1>My Website</h1>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
+    <div data-include="header"></div>
 
     <main>
 
@@ -39,17 +32,10 @@
 
     </main>
 
-    <footer>
-        <p>
-            <a class="back-link" href="index.html">
-                ← Back to Home
-            </a>        
-        </p>
-
-        <p>&copy; 2026 Your Name</p>
-    </footer>
+    <div data-include="footer"></div>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/includes.js"></script>
 
 </body>
 </html>
